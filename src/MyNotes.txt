@@ -75,8 +75,14 @@ we mention different module needed to import.
  #Directives
  Instructions to the DOM. components are Directives with a template.
  ##Structural Directives : changes the DOM. Starts with a *
- eg: *ngIf="", element will be added only when the condition is true.
-ng-template is a component/directive which can be used to mark templates in the DOM.
+ 
+*ngIf element will be added only when the condition is true.
+ eg: *ngIf=""
+ng-template is a component/directive which can be used to mark templates in the DOM. Used with else
+
+*ngFor is used to loop through array of elements
+
+*ngFor = "let anyName of NamefromTypescriptFile"
 
 ## attribute Directives
 Unlike Structural Directives, these dont add or remove elements. They only change the element
