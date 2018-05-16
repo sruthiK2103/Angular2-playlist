@@ -1,0 +1,93 @@
+#Bootstrap Install
+Install bootstrap using npm install --save bootstrap@3
+In angular.json file update styles with bootstrap path in node modules. 
+Check whether bootstrap has installed properly or not by inspecting html page style tags after you run the app.
+
+#use ng serve --port 4000 to change port number, default port is 4200.
+
+#How an angular app gets loaded and started
+
+main.ts file contains bootstrapModule as AppModule (this tells angular to load that component
+at the time of bootstrap) & import AppModule.
+In AppModule.ts file bootstrap array we add AppComponent.
+index.html file is the only file served by the server. It contains Js script imports which 
+will be loaded first and executed at runtime.
+index.html contains <app-root> (which is a selector in app.component.ts). app.component.ts file
+has html file which is loads its content in between <app-root> tag.
+
+#components
+Easy to exchange, used for re-use.
+egs : navbar, main area, side bar.
+
+Root component is app.component in which different selectors in the app will be added.
+
+## Create new component
+
+### manually
+create components in app folder. 
+Register new component in app.module.ts file declarations & import new component from its respective
+path.
+Add the new component selector in app.component.html file to use the new component.
+
+### Through CLI
+ng generate component [component Name] or ng g c [component Name]  command generates ts,css,html, spec file 
+of the new component and adds the component in app.module.ts automatically.
+
+template (in-line html code) or templateUrl should be present for a component. Use styles tag array
+to add in-line styles.
+
+### selectors in components
+selectors should be unique and can be different types like element, attribute or class.
+eg: selector:'app-server' or '[app-server]' or '.app-server'
+
+### constructor
+Its is called at the time of component creation by angular.
+
+### Nest components
+nest components by adding their selectors in different components
+
+#modules
+used to bundle different components into packages.
+@NgModule in app.module.ts file has declarations in which we mention components, imports in which 
+we mention different module needed to import. 
+
+#Data Binding = communication
+ 
+## Typescript code (Business Logic)   --->(output data)  Template(HTML)    use 
+
+ string interpolation (  {{data}} ) - should return a string as the result (a num will be converted to string )
+ property Binding ( [property]="data" )
+
+### property Binding vs string interpolation
+ To output/print data use string interpolation and to change a property use property Binding
+
+
+ ##Typescript code (Business Logic)   <---(React to user events)  Template(HTML)    use 
+
+ Event Binding ( (event)="expression" )
+
+ ##combination of both: two-way-Binding ( [(ngModel)]="data" )
+ For Two-Way-Binding to work, you need to enable the ngModel  directive. 
+ This is done by adding the FormsModule  to the imports[]  array in the AppModule.
+ You then also need to add the import from @angular/forms  in the app.module.ts file:
+ import { FormsModule } from '@angular/forms'; 
+
+ #Directives
+ Instructions to the DOM. components are Directives with a template.
+ ##Structural Directives : changes the DOM. Starts with a *
+ eg: *ngIf="", element will be added only when the condition is true.
+ng-template is a component/directive which can be used to mark templates in the DOM.
+
+## attribute Directives
+Unlike Structural Directives, these dont add or remove elements. They only change the element
+they were plced on.
+eg: [ngStyle]="{'background-color': 'red'}" or [ngStyle]="{backgroundColor: 'red'}" or
+[ngStyle]="{backgroundColor: getColor()}"
+
+
+
+ 
+
+
+
+

@@ -1,0 +1,21 @@
+<label>Server Name</label>
+<!--<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+ $event is reserved variable name used in template when using event binding
+It gives access to event data-->
+
+<input type="text" class="form-control" [(ngModel)]= "serverName">
+
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+
+<!-- <p>{{serverCreationStatus}}</p> -->
+
+<p *ngIf="serverCreated" ; else noServer>Server was created and it's name is {{serverName}}</p>
+<ng-template #noServer> 
+        <p>No Server was created!</p>
+</ng-template>
+<h2>
+        <app-server></app-server>
+        <app-server></app-server>
+ </h2>
+ <!--<p>{{allowNewServer}} </p> -->
+ <p [innerText] = "allowNewServer"></p>
