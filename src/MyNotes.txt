@@ -82,7 +82,7 @@ ng-template is a component/directive which can be used to mark templates in the 
 
 *ngFor is used to loop through array of elements
 
-*ngFor = "let anyName of NamefromTypescriptFile"
+*ngFor = "let anyName of NamefromTypescriptFile; let i=index"  -- index starts from 0
 
 ## attribute Directives
 Unlike Structural Directives, these dont add or remove elements. They only change the element
