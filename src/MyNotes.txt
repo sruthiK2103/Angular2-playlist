@@ -81,8 +81,18 @@ ng-template is a component/directive which can be used to mark templates in the 
 ## attribute Directives
 Unlike Structural Directives, these dont add or remove elements. They only change the element
 they were plced on.
+
+ngStyle is used to dynamically add styles.
+ngClass is used to add css class only when certain condition is true.
+
 eg: [ngStyle]="{'background-color': 'red'}" or [ngStyle]="{backgroundColor: 'red'}" or
-[ngStyle]="{backgroundColor: getColor()}"
+[ngStyle]="{backgroundColor: getColor()}" 
+[ngClass]="{className : condition}"
+
+Both these work with property binding which takes javascript object.
+
+
+
 
 
 
