@@ -14,8 +14,8 @@ It gives access to event data-->
         <p>No Server was created!</p>
 </ng-template>
 <h2>
-        <app-server></app-server>
-        <app-server></app-server>
+        <app-server *ngFor="let server of servers"></app-server>
+   
  </h2>
  <!--<p>{{allowNewServer}} </p> -->
  <p [innerText] = "allowNewServer"></p>
