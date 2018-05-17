@@ -9,7 +9,7 @@ It gives access to event data-->
 
 <!-- <p>{{serverCreationStatus}}</p> -->
 
-<p *ngIf="serverCreated" ; else noServer>Server was created and it's name is {{serverName}}</p>
+<p *ngIf="serverCreated; else noServer">Server was created and it's name is {{serverName}}</p>
 <ng-template #noServer> 
         <p>No Server was created!</p>
 </ng-template>

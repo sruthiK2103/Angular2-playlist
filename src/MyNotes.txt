@@ -93,7 +93,7 @@ ngClass is used to add css class only when certain condition is true.
 
 eg: [ngStyle]="{'background-color': 'red'}" or [ngStyle]="{backgroundColor: 'red'}" or
 [ngStyle]="{backgroundColor: getColor()}" 
-[ngClass]="{className : condition}"
+[ngClass]="{className : condition}"  --Note: className with hypens should be used in ''
 
 Both these work with property binding which takes javascript object.
 
